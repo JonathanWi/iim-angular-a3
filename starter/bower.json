@@ -1,0 +1,10 @@
+{
+  "name": "pro-viceversa",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4",
+    "ui-router-extras": "~0.0.13",
+    "bootstrap-css-only": "~3.3.5",
+    "angular-bootstrap": "~0.13.4"
+  }
+}
