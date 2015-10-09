@@ -14,7 +14,7 @@ Afin que vous ne vous lanciez pas la tête la première dans toutes les features
 ### 1. Créer et afficher la liste
 
 **1.1 Dans le `HomeCtrl`, créez un array contenant différents produits (Usual Suspects, Prisonners, La revanche d'une blonde...).**  
-*La variable contenant cet array doit être `$scope.groceries`*
+*La variable contenant cet array doit être `$scope.movies`*
 
 **1.2 Dans la vue `home.html`, affichez le contenu de `$scope.movies` dans une liste html :**    
 *Pour cette question vous aurez besoin d'utiliser `ng-repeat`*
