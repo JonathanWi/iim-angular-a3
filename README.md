@@ -1,3 +1,34 @@
+# Pré-requis
+
+Avant toutes choses, veuillez vérifiez que vous avez sur votre machine `npm`, `grunt` et `bower`.
+
+**Vérifier que vous avez `npm`: dans votre console tapez :**
+````
+$ npm -v
+````
+Si le résultat est de type `v0.12.7`, `npm`est installé.   
+Si le résutat est de type `npm: command not found`, veuillez vous rendre sur https://nodejs.org/en/ et suivez le processus d'installation.
+
+**Une fois npm installé, lancez la commande :**
+````
+$ npm i -g grunt-cli bower
+````
+
+Afin de pouvoir réaliser les exercices ci-dessous, veuillez télécharger le dossier `starter`. 
+
+**À l'aide de la console, rendez vous dans le dossier `starter` et lancez les commandes suivantes:**
+
+````
+$ npm install
+$ bower install
+````
+
+**Finalement, pour lancer l'exercice, lancez la commande :**
+````
+$ grunt serve
+````
+
+
 # Exercice 1 — To-watch list
 Le but de cet exercice est de réaliser une liste de films à voir interactive. 
 
@@ -154,8 +185,82 @@ $http(
   });
 ````
 
-**1.6 Grâce à un `ng-repeat` affichez alors dans `home.html` les titres des différents films contenus dans `$scope.popularMovies`**  
-*Note: les titres ne s'appelent pas `title` mais `original_title` dans l'array récupéré depuis TMDb*
+**1.6 Grâce à un `ng-repeat` affichez alors dans `home.html` - au sein d'une liste html - les titres des différents films contenus dans `$scope.popularMovies`**  
+*Note: les titres ne s'appelent pas `title` mais `original_title` dans l'array récupéré depuis TMDb.*
+
+**1.7 Afin d'afficher les posters des films récupérés, ajoutez - dans le `HomeCtrl.js` une variable `$scope.baseImageUrl` ayant pour valeur `http://image.tmdb.org/t/p/w500`. Sachant que le poster de chaque film de l'array `$scope.popularMovies` est contenu dans la clé `poster_path`, affichez les images grâce au code ci-dessous :**
+
+````
+<img src="{{baseImageUrl}}{{popularMovie.poster_path}}" />
+````
+
+### 2. Rechercher un film
+
+**2.1 Dans le `TmdbService`, ajoutez une fonction `search`, effectuant une requête `$http` de `method : 'GET'` sur l'url `/search/movie` et prenant en paramètre `params` une `api_key` de valeur `apiKey` et une `query` de valeur `'usual'`. Une fois la requête effectuée, affichez le résultat dans un `console.log()`**
+
+````
+$http(
+  ...
+  params : {
+    api_key : apiKey,
+    query : 'usual'
+  }
+  ...
+).then...
+````
+
+**2.2 Analysez la structure de l'array `json` renvoyé et créez une variable `movies` (toujours dans le resulate de votre appel `$http`) contenant uniquement les films (`results`) récupérés.**  
+
+**2.3 Dans la fonction `search`, faites en sorte qu'au `success` (si l'appel s'est déroulé sans problème), `q.resolve` les `movies` récupérées. En cas d'erreur, utilisez `q.reject`**  
+
+**2.4 dans le `HomeCtrl` injectez `TmdbService`. Appelez ensuite `TmdbService.search()`. Faites passer les data obtenues (`movies`) dans une variable `$scope.searchResults`**  
+*Pour cette question, vous aurez besoin d'utiliser la structure :*
+````
+...
+  .then(function(movies) {
+    <!-- Success -->
+  });
+````
+
+**2.5 Grâce à un `ng-repeat` affichez alors dans `home.html` - au sein d'une liste html - les titres des différents films contenus dans `$scope.searchResults`**  
+*Note: les titres ne s'appelent pas `title` mais `original_title` dans l'array récupéré depuis TMDb.*
+
+**2.6 Comme dans la partie 1, affichez les posters associés aux films contenus dans `$scope.searchResults`**.
+
+Jusqu'à présent, les résultats obtenus dépendent de `'usual'` écrit en dur dans notre fonction search. Le but maintenant est de rendre cette valeur dynamique via un `form` de recherche
+
+**2.7 Dans le `TmdbService` modifiez la fonction `search()` pour qu'elle prenne en paramètre un string `searchTerm`. Remplacez alors `'usual'` par `searchTerm`**.
+
+**2.8 Dans le `HomeCtrl` ajoutez une fonction `searchMovies()` qui prend en paramètre `searchTerm` et qui déclenche `TmdbService.search(searchTerm)`. Comme précedemment, les résultats de cette recherche seront contenus dans la variable `$scope.searchResults`**.
+
+Ajoutez le formulaire ci-dessous dans `home.html`
+
+````
+<form>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Chercher un film...">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="submit">Search!</button>
+    </span>
+  </div>
+</form>
+````
+
+**2.9 Ajoutez le `ng-model` `searchTerm` à l'`input`, et faites en sorte que le submit (`ng-submit`) déclenche la fonction `$scope.searchMovies(searchTerm)`**.  
+*Si tout à fonctionné, vous devriez voir apparaitre les films relatifs à votre recherche au click sur le bouton submit!*
+
+**2.10 Faites en sorte que le click sur le poster (`<img />`) ajoute le film à l'array `$scope.movie`**
+
+# Exercice 3 — Pour aller plus loin
+
+> Si vous êtes arrivés jusqu'ici, voici un échantillon de features possible à ajouter. Pour cet exercice, aucune aide n'est apportée, et il faudra souvent chercher sur internet les solutions aux problèmes posés.
+
+Si vous avez fini les deux exercices prédents, félicitations ! Il existe néanmoins de nombreuses features à ajouter qui n'ont pas été abordés :
+
+1. Dans les resultats de recherches, faites en sorte qu'un click sur le titre du film affiche un modal, dont le contenu est la fiche du film récupérée depuis Tmdb
+2. Actuellement, les films ajoutés à votre to-watch list disparaissent à l'actualisation de la page, utilisez l'API `localstorage` pour enregistrer les films sur le device.
+3. Ajoutez un sytème de notes (5 stars) aux films contenus dans `$scope.movies`
+
 
 
 
