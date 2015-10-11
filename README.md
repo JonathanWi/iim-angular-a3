@@ -1,8 +1,8 @@
 # Pré-requis
 
-Avant toutes choses, veuillez vérifiez que vous avez sur votre machine `npm`, `grunt` et `bower`.
+Avant toutes choses, veuillez vérifier que vous avez sur votre machine `npm`, `grunt` et `bower`.
 
-**Vérifier que vous avez `npm`: dans votre console tapez :**
+**Vérifiez que vous avez `npm`: dans votre console tapez :**
 ````
 $ npm -v
 ````
@@ -74,7 +74,7 @@ Afin que vous ne vous lanciez pas la tête la première dans toutes les features
 ````
 
 **2.1 Dans le `HomeCtrl`, créez la fonction `$scope.addItems()`. Cette fonction prend un `item` en paramètre, et l'affiche via un `console.log()`**  
-*Testez cette fonction et verifiez que l'item entré en paramètre s'affiche dans la console chrome*
+*Testez cette fonction et vérifiez que l'item entré en paramètre s'affiche dans la console chrome*
 
 **2.2 Dans la vue `home.html`, La soumission du formulaire doit déclencher `$scope.addItem(itemToAdd)`, `itemToAdd` étant la valeur saisie dans l'`input text`**  
 *Pour cette question, vous aurez besoin d'utiliser `ng-model` et `ng-submit`. Afin de tester si votre code fonctionne, vérifiez que la valeur entrée dans votre input text et soumise via votre formulaire est la même que celle présente dans votre console.*
@@ -82,10 +82,11 @@ Afin que vous ne vous lanciez pas la tête la première dans toutes les features
 *Passons au choses sérieuses...*
 
 **2.3 Modifiez la fonction `$scope.addItem()` pour que celle-ci ajoute l'item dans l'array `$scope.movies`**  
-*Pour cette question, vous aurez besoin d'utiliser `array.push`. Si tout fonctionne, vous devriez voir s'afficher des nouveaux éléments dans votre liste.*
+*Pour cette question, vous aurez besoin d'utiliser `array.push`. Si tout fonctionne, vous devriez voir s'afficher de nouveaux éléments dans votre liste.*
 
 
-**2.4 Un peu de vérifications : Votre formulaire fonctionne, mais il ajoute n'importe quelle valeur à votre array, même les champs vide ! Ajoutez une vérification dans la fonction `$scope.addItem()` et faites en sorte qu'elle n'ajoute que les items non vides.**  
+**2.4 Un peu de vérifications : votre formulaire fonctionne, mais il ajoute n'importe quelle valeur à votre array, même les champs vides ! 
+Ajoutez une vérification dans la fonction `$scope.addItem()` et faites en sorte qu'elle n'ajoute que les items non vides.**  
 *Pour cette question, vous aurez besoin d'utiliser `array.length` et `trim`. Si tout fonctionne, vous devriez pouvoir cliquer autant que vous le voulez sur submit avec l'input vide sans que rien ne se produise.*
 
 **2.5 Ajoutez une alert d'erreur et/ou de success sous votre formulaire après l'ajout réussi - ou non - d'un item. Cette alert disparait au bout de `3s`.**  
@@ -102,7 +103,7 @@ Afin que vous ne vous lanciez pas la tête la première dans toutes les features
 
 ### 3. Supprimer des éléments
 
-> Afin de commencer cette 3ème partie, nous allons tout d'abbord styliser un peu notre > liste. Remplacez les `<li>` par les éléments ci dessous :
+> Afin de commencer cette 3ème partie, nous allons tout d'abord styliser un peu notre > liste. Remplacez les `<li>` par les éléments ci dessous :
 
 ````
 <li>
@@ -114,15 +115,15 @@ Afin que vous ne vous lanciez pas la tête la première dans toutes les features
 
 
 **3.1 Dans le `HomeCtrl`, créez la fonction `$scope.removeItem()`. Cette fonction prend un `index` (integer) en paramètre, et l'affiche via un `console.log()`**  
-*Testez cette fonction et verifiez que l'item entré en paramètre s'affiche dans la console chrome*
+*Testez cette fonction et vérifiez que l'item entré en paramètre s'affiche dans la console chrome*
 
 **3.2 Dans la vue `home.html`, Le click sur le bouton `x` doit déclencher `$scope.removeItem($index)`, avec `$index` l'index de l'élément sélectionné.**  
 *Pour cette question, vous aurez besoin d'utiliser `ng-click` et `track by $index` de `ng-repeat`. Afin de tester si votre code fonctionne, vérifiez que la valeur qui s'affiche dans votre console correspond à l'index de l'élément sélectionné (rappel : un array commence à l'index 0)*
 
 **3.3 Modifiez la fonction `$scope.removeItem()` pour que celle-ci retire l'item de l'array `$scope.movies`**  
-*Pour cette question, vous aurez besoin d'utiliser `array.splice`. Si tout fonctionne, vous devriez voir disparaitre l'élément au click.*
+*Pour cette question, vous aurez besoin d'utiliser `array.splice`. Si tout fonctionne, vous devriez voir disparaître l'élément au click.*
 
-**3.4 Ajoutez une alert de success sous votre formulaire après la supression réussie de l'item. Cette alert disparait au bout de `3s`.**  
+**3.4 Ajoutez une alert de success sous votre formulaire après la suppression réussie de l'item. Cette alert disparaît au bout de `3s`.**  
 *Pour cette question, vous aurez besoin d'utiliser `ng-show` ainsi que `$timeout` et de créer une variable `$scope.displaySuccessRemove`*
 
 ````
@@ -133,8 +134,8 @@ Afin que vous ne vous lanciez pas la tête la première dans toutes les features
 
 ### 4. Check un élément
 
-**4.1 Modifiez `$scope.movies` afin d'en faire un tableau associatif : Chaque élément du tableau aura alors une clé `title` (dont la valeur sera - par exemple - Usual Suspects) et une clé `seen` de type `bool` par défault à `false`.**  
-*Le fait de modifier votre tableau à pour effet de casser l'affichage de vos éléments , mais pas de panique : Modifiez le `ng-repeat` en accord avec le nouveau tableau et modifiez la fonction `$scope.addItem()` et tout rentrera dans l'ordre*
+**4.1 Modifiez `$scope.movies` afin d'en faire un tableau associatif : chaque élément du tableau aura alors une clé `title` (dont la valeur sera - par exemple - Usual Suspects) et une clé `seen` de type `bool` par défault à `false`.**  
+*Le fait de modifier votre tableau a pour effet de casser l'affichage de vos éléments , mais pas de panique : modifiez le `ng-repeat` en accord avec le nouveau tableau et modifiez la fonction `$scope.addItem()` et tout rentrera dans l'ordre*
 
 **4.2 Dans la vue `home.html`, bind chaque checkbox au model `movie.seen` associé (se référer à la documentation de `ng-model` concernant les checkbox).**  
 *Pour cette question, afin de tester si votre code fonctionne, vous pouvez afficher la valeur `{{movie.seen}}` à côté du nom de l'élément (exemple : Usual Suspect false). Si la valeur change au click sur la checkbox, c'est que tout fonctionne*
@@ -170,10 +171,11 @@ $http(
 ).then...
 ````
 
-**1.3 Analysez la structure de l'array `json` renvoyé et créez une variable `movies` (toujours dans le resulate de votre appel `$http`) contenant uniquement les films (`results`) récupérés.**  
+**1.3 Analysez la structure de l'array `json` renvoyée et créez une variable `movies` (toujours dans le resulate de votre appel `$http`) contenant uniquement les films (`results`) récupérés.**  
 
 
-**1.4 Utilisation de [`$q`](https://docs.angularjs.org/api/ng/service/$q) : dans la fonction `getPopular`, faites en sorte qu'au `success` (si l'appel s'est déroulé sans problème), `q.resolve` les `movies` récupérées. En cas d'erreur, utilisez `q.reject`**  
+**1.4 Utilisation de [`$q`](https://docs.angularjs.org/api/ng/service/$q) : dans la fonction `getPopular`, faites en sorte qu'au `success` (si l'appel s'est déroulé sans problème), `q.resolve` les `movies` récupérés. En cas d'erreur, utilisez `q.reject`**  
+
 *Faites moi signe si vous en êtes arrivés à cette question, et nous vérifierons ensemble si votre code fonctionne. Lisez impérativement la doc de $q pour réussir cette question*
 
 **1.5 dans le `HomeCtrl` injectez `TmdbService`. Appelez ensuite `TmdbService.getPopular()`. Faites passer les data obtenues (`movies`) dans une variable `$scope.popularMovies`**  
@@ -186,7 +188,7 @@ $http(
 ````
 
 **1.6 Grâce à un `ng-repeat` affichez alors dans `home.html` - au sein d'une liste html - les titres des différents films contenus dans `$scope.popularMovies`**  
-*Note: les titres ne s'appelent pas `title` mais `original_title` dans l'array récupéré depuis TMDb.*
+*Note: les titres ne s'appellent pas `title` mais `original_title` dans l'array récupéré depuis TMDb.*
 
 **1.7 Afin d'afficher les posters des films récupérés, ajoutez - dans le `HomeCtrl.js` une variable `$scope.baseImageUrl` ayant pour valeur `http://image.tmdb.org/t/p/w500`. Sachant que le poster de chaque film de l'array `$scope.popularMovies` est contenu dans la clé `poster_path`, affichez les images grâce au code ci-dessous :**
 
@@ -209,9 +211,9 @@ $http(
 ).then...
 ````
 
-**2.2 Analysez la structure de l'array `json` renvoyé et créez une variable `movies` (toujours dans le resulate de votre appel `$http`) contenant uniquement les films (`results`) récupérés.**  
+**2.2 Analysez la structure de l'array `json` renvoyée et créez une variable `movies` (toujours dans le resulate de votre appel `$http`) contenant uniquement les films (`results`) récupérés.**  
 
-**2.3 Dans la fonction `search`, faites en sorte qu'au `success` (si l'appel s'est déroulé sans problème), `q.resolve` les `movies` récupérées. En cas d'erreur, utilisez `q.reject`**  
+**2.3 Dans la fonction `search`, faites en sorte qu'au `success` (si l'appel s'est déroulé sans problème), `q.resolve` les `movies` récupérés. En cas d'erreur, utilisez `q.reject`**  
 
 **2.4 dans le `HomeCtrl` injectez `TmdbService`. Appelez ensuite `TmdbService.search()`. Faites passer les data obtenues (`movies`) dans une variable `$scope.searchResults`**  
 *Pour cette question, vous aurez besoin d'utiliser la structure :*
@@ -223,7 +225,7 @@ $http(
 ````
 
 **2.5 Grâce à un `ng-repeat` affichez alors dans `home.html` - au sein d'une liste html - les titres des différents films contenus dans `$scope.searchResults`**  
-*Note: les titres ne s'appelent pas `title` mais `original_title` dans l'array récupéré depuis TMDb.*
+*Note: les titres ne s'appellent pas `title` mais `original_title` dans l'array récupéré depuis TMDb.*
 
 **2.6 Comme dans la partie 1, affichez les posters associés aux films contenus dans `$scope.searchResults`**.
 
@@ -231,7 +233,7 @@ Jusqu'à présent, les résultats obtenus dépendent de `'usual'` écrit en dur 
 
 **2.7 Dans le `TmdbService` modifiez la fonction `search()` pour qu'elle prenne en paramètre un string `searchTerm`. Remplacez alors `'usual'` par `searchTerm`**.
 
-**2.8 Dans le `HomeCtrl` ajoutez une fonction `searchMovies()` qui prend en paramètre `searchTerm` et qui déclenche `TmdbService.search(searchTerm)`. Comme précedemment, les résultats de cette recherche seront contenus dans la variable `$scope.searchResults`**.
+**2.8 Dans le `HomeCtrl` ajoutez une fonction `searchMovies()` qui prend en paramètre `searchTerm` et qui déclenche `TmdbService.search(searchTerm)`. Comme précedement, les résultats de cette recherche seront contenus dans la variable `$scope.searchResults`**.
 
 Ajoutez le formulaire ci-dessous dans `home.html`
 
@@ -247,7 +249,7 @@ Ajoutez le formulaire ci-dessous dans `home.html`
 ````
 
 **2.9 Ajoutez le `ng-model` `searchTerm` à l'`input`, et faites en sorte que le submit (`ng-submit`) déclenche la fonction `$scope.searchMovies(searchTerm)`**.  
-*Si tout à fonctionné, vous devriez voir apparaitre les films relatifs à votre recherche au click sur le bouton submit!*
+*Si tout à fonctionné, vous devriez voir apparaître les films relatifs à votre recherche au click sur le bouton submit!*
 
 **2.10 Faites en sorte que le click sur le poster (`<img />`) ajoute le film à l'array `$scope.movie`**
 
@@ -255,11 +257,13 @@ Ajoutez le formulaire ci-dessous dans `home.html`
 
 > Si vous êtes arrivés jusqu'ici, voici un échantillon de features possible à ajouter. Pour cet exercice, aucune aide n'est apportée, et il faudra souvent chercher sur internet les solutions aux problèmes posés.
 
-Si vous avez fini les deux exercices prédents, félicitations ! Il existe néanmoins de nombreuses features à ajouter qui n'ont pas été abordés :
+Si vous avez fini les deux exercices précédents, félicitations ! Il existe néanmoins de nombreuses features à ajouter qui n'ont pas été abordées :
 
-1. Dans les resultats de recherches, faites en sorte qu'un click sur le titre du film affiche un modal, dont le contenu est la fiche du film récupérée depuis Tmdb
+1. Dans les résultats de recherche, faites en sorte qu'un click sur le titre du film affiche un modal, dont le contenu est la fiche du film récupérée depuis Tmdb
 2. Actuellement, les films ajoutés à votre to-watch list disparaissent à l'actualisation de la page, utilisez l'API `localstorage` pour enregistrer les films sur le device.
 3. Ajoutez un sytème de notes (5 stars) aux films contenus dans `$scope.movies`
+
+
 
 
 
