@@ -95,7 +95,7 @@ Afin que vous ne vous lanciez pas la tête la première dans toutes les features
 
 **2.4 Un peu de vérifications : votre formulaire fonctionne, mais il ajoute n'importe quelle valeur à votre array, même les champs vides ! 
 Ajoutez une vérification dans la fonction `$scope.addItem()` et faites en sorte qu'elle n'ajoute que les items non vides.**  
-*Pour cette question, vous aurez besoin d'utiliser `array.length` et `trim`. Si tout fonctionne, vous devriez pouvoir cliquer autant que vous le voulez sur submit avec l'input vide sans que rien ne se produise.*
+*Pour cette question, vous aurez besoin d'utiliser `array.length`. Si tout fonctionne, vous devriez pouvoir cliquer autant que vous le voulez sur submit avec l'input vide sans que rien ne se produise.*
 
 **2.5 Ajoutez une alert d'erreur et/ou de success sous votre formulaire après l'ajout réussi - ou non - d'un item. Cette alert disparait au bout de `3s`.**  
 *Pour cette question, vous aurez besoin d'utiliser `ng-show` ainsi que `$timeout` et de créer une variable `$scope.displaySuccessAdd` et `$scope.displayErrorAdd`*
