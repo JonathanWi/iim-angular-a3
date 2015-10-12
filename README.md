@@ -13,6 +13,14 @@ Si le résutat est de type `npm: command not found`, veuillez vous rendre sur ht
 ````
 $ npm i -g grunt-cli bower
 ````
+*Si vous avez une ou plusieurs erreur à cette étape, faites*
+
+````
+// Pour Mac
+$ sudo npm i -g grunt-cli bower
+// Pour Windows
+$ npm i -g grunt-cli bower --force
+````
 
 Afin de pouvoir réaliser les exercices ci-dessous, veuillez télécharger le dossier `starter`. 
 
