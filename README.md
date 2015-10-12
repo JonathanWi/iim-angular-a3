@@ -81,7 +81,7 @@ Afin que vous ne vous lanciez pas la tête la première dans toutes les features
 </form>
 ````
 
-**2.1 Dans le `HomeCtrl`, créez la fonction `$scope.addItems()`. Cette fonction prend un `item` en paramètre, et l'affiche via un `console.log()`**  
+**2.1 Dans le `HomeCtrl`, créez la fonction `$scope.addItem()`. Cette fonction prend un `item` en paramètre, et l'affiche via un `console.log()`**  
 *Testez cette fonction et vérifiez que l'item entré en paramètre s'affiche dans la console chrome*
 
 **2.2 Dans la vue `home.html`, La soumission du formulaire doit déclencher `$scope.addItem(itemToAdd)`, `itemToAdd` étant la valeur saisie dans l'`input text`**  
@@ -104,14 +104,14 @@ Ajoutez une vérification dans la fonction `$scope.addItem()` et faites en sorte
 <div class="alert alert-success">
   <b>Bravo</b> un film a été ajouté à votre liste
 </div>
-<div class="alert alert-error">
+<div class="alert alert-danger">
   <b>Oops</b> Il semblerait que vous essayez d'ajouter un film sans titre...
 </div>
 ````
 
 ### 3. Supprimer des éléments
 
-> Afin de commencer cette 3ème partie, nous allons tout d'abord styliser un peu notre > liste. Remplacez les `<li>` par les éléments ci dessous :
+> Afin de commencer cette 3ème partie, nous allons tout d'abord styliser un peu notre liste. Remplacez les `<li>` par les éléments ci dessous :
 
 ````
 <li>
@@ -179,7 +179,7 @@ $http(
 ).then...
 ````
 
-**1.3 Analysez la structure de l'array `json` renvoyée et créez une variable `movies` (toujours dans le resulate de votre appel `$http`) contenant uniquement les films (`results`) récupérés.**  
+**1.3 Analysez la structure de l'array `json` renvoyée et créez une variable `movies` (toujours dans le resultat de votre appel `$http`) contenant uniquement les films (`results`) récupérés.**  
 
 
 **1.4 Utilisation de [`$q`](https://docs.angularjs.org/api/ng/service/$q) : dans la fonction `getPopular`, faites en sorte qu'au `success` (si l'appel s'est déroulé sans problème), `q.resolve` les `movies` récupérés. En cas d'erreur, utilisez `q.reject`**  
