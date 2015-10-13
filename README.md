@@ -116,7 +116,7 @@ Ajoutez une vérification dans la fonction `$scope.addItem()` et faites en sorte
 ````
 <li>
   <input type="checkbox" />
-  {{movie}}
+  <span>{{movie}}</span>
   <button class="btn btn-danger btn-xs">x</button>
 </li>
 ````
