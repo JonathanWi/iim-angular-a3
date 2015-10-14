@@ -301,7 +301,7 @@ angular.module('starter.controllers').controller('MovieCtrl', [
 ]);
 ````
 
-**1.5 À la fin du fichier `index.html` (juste après le lien vers `HomeCtrl.js`) , ajoutez un `<script src="...">` vers notre fichier `MovieCtrl.js`**
+**1.5 À la fin du fichier `index.html` (juste après le lien vers `HomeCtrl.js`) , ajoutez un `<script src="...">` vers notre fichier `MovieCtrl.js`. Ajoutez ensuite ce controller à la route `movie` dans `routes.js`**
 
 **1.6 Dans le `TmdbService`, ajoutez - à la suite de vos fonction de `search` et de `getPopular` la fonction suivante (cette fonction va récupérer un film pour un `id` précisé):**
 
