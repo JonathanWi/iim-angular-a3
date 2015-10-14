@@ -334,7 +334,7 @@ getMovie: function (id) {
 *Pour cette question, utilisez `ui-sref="movie({id : searchResult.id})"`*
 
 **2.0 Remplacez l'id `158852` par l'`id` passer en paramètre dans l'url**  
-*Pour cette question, lisez la documentation de `$stateParams`
+*Pour cette question, lisez la documentation de `$stateParams`*
 
 # Exercice 4 — Pour aller plus loin
 
