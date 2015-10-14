@@ -340,7 +340,7 @@ getMovie: function (id) {
 
 > Si vous êtes arrivés jusqu'ici, voici un échantillon de features possible à ajouter. Pour cet exercice, aucune aide n'est apportée, et il faudra souvent chercher sur internet les solutions aux problèmes posés.
 
-Si vous avez fini les deux exercices précédents, félicitations ! Il existe néanmoins de nombreuses features à ajouter qui n'ont pas été abordées :
+Si vous avez fini les trois exercices précédents, félicitations ! Il existe néanmoins de nombreuses features à ajouter qui n'ont pas été abordées :
 
 1. Dans les résultats de recherche, faites en sorte qu'un click sur le titre du film affiche un modal, dont le contenu est la fiche du film récupérée depuis Tmdb
 2. Actuellement, les films ajoutés à votre to-watch list disparaissent à l'actualisation de la page, utilisez l'API `localstorage` pour enregistrer les films sur le device.
