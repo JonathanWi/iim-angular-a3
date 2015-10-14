@@ -261,7 +261,82 @@ Ajoutez le formulaire ci-dessous dans `home.html`
 
 **2.10 Faites en sorte que le click sur le poster (`<img />`) ajoute le film à l'array `$scope.movie`**
 
-# Exercice 3 — Pour aller plus loin
+# Exercice 3 — Un peu de routing
+
+Dans cette exercice, nous allons créer une nouvelle page `movie` qui prendra en paramètre l'id d'un film et en affichera les informations : titre, poster et résumé.
+
+> Pour cette partie, veuillez vous référer à la documentation de [`ui-router`](http://angular-ui.github.io/ui-router/site/#/api/ui.router)
+
+### 1. Une nouvelle route
+
+**1.1 Créez - dans le repertoire `templates/` un fichier `movie.html` et inserez-y le code ci-dessous**
+
+````
+<div class="container" style="margin-top: 20px; max-width: 760px">
+  <img src="http://image.tmdb.org/t/p/w1000/dkMD5qlogeRMiEixC4YNPUvax2T.jpg" style="width:100%" alt="">
+  <h1>Jurassic World</h1>
+  <p class="text-muted">
+    Released on <b>2015-06-12</b>
+  </p>
+  <p class="lead">
+    Twenty-two years after the events of Jurassic Park, Isla Nublar now features a fully functioning dinosaur theme park, Jurassic World, as originally envisioned by John Hammond.
+  </p>
+</div>
+````
+
+**1.2 Dans le fichier `routes.js`, et en vous inspirant du schéma de la route `home`, créez une nouvelle route `movie` ayant pour url `/movie` et pour `templateUrl` `templates/movie.html` (pour l'instant cette route n'a pas de controller)**
+
+
+**1.3 Dans `home.html` créez un lien vers la page `movie`**  
+*Pour cette question, vous aurez besoin d'utiliser `ui-sref` (pas de `href`!)*
+
+**1.4 Dans le répertoire `controllers`, créez un nouveau fichier `MovieCtrl.js` et inserez-y le code ci-dessous**
+
+````
+angular.module('starter.controllers').controller('MovieCtrl', [
+  '$scope', 'TmdbService',
+  function ($scope, TmdbService) {
+    $scope.baseImageUrl = 'http://image.tmdb.org/t/p/w500';
+  }
+]);
+````
+
+**1.5 À la fin du fichier `index.html` (juste après le lien vers `HomeCtrl.js`) , ajoutez un `<script src="...">` vers notre fichier `MovieCtrl.js`**
+
+**1.6 Dans le `TmdbService`, ajoutez - à la suite de vos fonction de `search` et de `getPopular` la fonction suivante (cette fonction va récupérer un film pour un `id` précisé):**
+
+````
+getMovie: function (id) {
+  var q = $q.defer();
+  $http({
+    method: 'GET',
+    url: baseUrl + '/movie/' + id,
+    params: {
+      api_key : apiKey
+    }
+  }).then(function(response) {
+     // Success
+     var movie = response.data;
+     q.resolve(movie);
+    }, function(response) {
+      // Error
+      q.reject;
+    });
+  return q.promise;
+},
+````
+
+**1.7 Dans le `MovieCtrl`, appelez `TmdbService.getMovie` pour l'id `158852` et passez le resultat dans une variable `$scope.movie`**
+
+**1.8 Dans `movie.html` remplacez le titre, le poster, la date de sortie et le résumé par : `{{movie.original_title}}`, `{{movie.backdrop_path}}`, `{{movie.release_data}}` et `{{movie.overview}}`.**
+
+**1.9 Un peu de dynamisme : faites en sorte que le click sur un résultat de recherche dans `home.html` envoie vers `movie` avec pour paramètre l'`id` du film. Pour se faire modifiez l'url de `movie` en `/movie/:id` dans le `routes.js`**  
+*Pour cette question, utilisez `ui-sref="movie({id : searchResult.id})"`*
+
+**2.0 Remplacez l'id `158852` par l'`id` passer en paramètre dans l'url**  
+*Pour cette question, lisez la documentation de `$stateParams`
+
+# Exercice 4 — Pour aller plus loin
 
 > Si vous êtes arrivés jusqu'ici, voici un échantillon de features possible à ajouter. Pour cet exercice, aucune aide n'est apportée, et il faudra souvent chercher sur internet les solutions aux problèmes posés.
 
