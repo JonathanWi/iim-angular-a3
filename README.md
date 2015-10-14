@@ -273,7 +273,7 @@ Dans cet exercice, nous allons créer une nouvelle page `movie` qui prendra en p
 
 ````
 <div class="container" style="margin-top: 20px; max-width: 760px">
-  <img src="http://image.tmdb.org/t/p/w1000/dkMD5qlogeRMiEixC4YNPUvax2T.jpg" style="width:100%" alt="">
+  <img src="http://image.tmdb.org/t/p/w1000/dkMD5qlogeRMiEixC4YNPUvax2T.jpg" style="width:100%;max-width:100%;" alt="">
   <h1>Jurassic World</h1>
   <p class="text-muted">
     Released on <b>2015-06-12</b>
