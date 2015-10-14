@@ -263,7 +263,7 @@ Ajoutez le formulaire ci-dessous dans `home.html`
 
 # Exercice 3 — Un peu de routing
 
-Dans cette exercice, nous allons créer une nouvelle page `movie` qui prendra en paramètre l'id d'un film et en affichera les informations : titre, poster et résumé.
+Dans cet exercice, nous allons créer une nouvelle page `movie` qui prendra en paramètre l'id d'un film et en affichera les informations : titre, poster et résumé.
 
 > Pour cette partie, veuillez vous référer à la documentation de [`ui-router`](http://angular-ui.github.io/ui-router/site/#/api/ui.router)
 
