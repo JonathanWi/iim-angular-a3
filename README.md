@@ -328,7 +328,7 @@ getMovie: function (id) {
 
 **1.7 Dans le `MovieCtrl`, appelez `TmdbService.getMovie` pour l'id `158852` et passez le resultat dans une variable `$scope.movie`**
 
-**1.8 Dans `movie.html` remplacez le titre, le poster, la date de sortie et le résumé par : `{{movie.original_title}}`, `{{movie.backdrop_path}}`, `{{movie.release_data}}` et `{{movie.overview}}`.**
+**1.8 Dans `movie.html` remplacez le titre, le poster, la date de sortie et le résumé par : `{{movie.original_title}}`, `{{movie.backdrop_path}}`, `{{movie.release_date}}` et `{{movie.overview}}`.**
 
 **1.9 Un peu de dynamisme : faites en sorte que le click sur un résultat de recherche dans `home.html` envoie vers `movie` avec pour paramètre l'`id` du film. Pour se faire modifiez l'url de `movie` en `/movie/:id` dans le `routes.js`**  
 *Pour cette question, utilisez `ui-sref="movie({id : searchResult.id})"`*
